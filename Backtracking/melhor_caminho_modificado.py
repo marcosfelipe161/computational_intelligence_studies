@@ -119,11 +119,13 @@ def main():
         # Prepara os passos para animação do caminho encontrado
         anim_steps = [(l, c, caminho[:i]) for i, (l, c) in enumerate(caminho)]
         ani = animar_busca(tabuleiro, anim_steps, caminho_encontrado=True)
+        ani.save("caminho_encontrado.gif", writer="pillow")
     else:
         print("\033[1;31mNão há caminho possível!\033[0m")
         # Anima a tentativa mais próxima do destino
         anim_steps = [(l, c, tentativa[:i]) for i, (l, c) in enumerate(tentativa)]
         ani = animar_busca(tabuleiro, anim_steps, caminho_encontrado=False)
+        ani.save("caminho_nao_encontrado.gif", writer="pillow")  
 
     plt.show()  
 if __name__ == "__main__":
