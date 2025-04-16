@@ -1,3 +1,3 @@
-# inteligencia_computacional_vai_na_web
+# Introdução à inteligencia computacional 
 
-Algoritmos desenvolvidos ao longo do curso de inteligência computacional ministritado pela equipe do vai na web
+Algoritmos desenvolvidos ao longo do curso de introdução à inteligência computacional ministrado pela equipe do vai na web.
