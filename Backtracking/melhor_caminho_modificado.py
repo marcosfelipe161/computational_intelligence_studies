@@ -1,3 +1,7 @@
+# Nesse algoritmo, com relação ao algoritmo de melhor caminho, fiz a modificação
+# de adicionar obstaculos aleatorios numa matriz 3x10 e uma animação do caminho
+# sendo feito em tempo real usando a matplotlib
+
 import random
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
