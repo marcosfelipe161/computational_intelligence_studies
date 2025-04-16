@@ -3,9 +3,10 @@
 # do tabuleiro será feito em uma matriz que vai conter espaços 
 # vazios e espaços bloqueados (utilize um X).
 
-# Função para exibir o tabuleiro no terminal.
-# Ela destaca a posição atual com um asterisco vermelho (*)
-# e marca os caminhos já percorridos com um ponto (·).
+# Função para exibir o tabuleiro no terminal
+# a funcao destaca a posição atual com um asterisco vermelho 
+# e marca os caminhos já percorridos com um pnto
+
 def mostrar_tabuleiro(tabuleiro, pos_atual=None, rastro=None):
     rastro = rastro or set()
     for i, linha in enumerate(tabuleiro):
@@ -19,17 +20,17 @@ def mostrar_tabuleiro(tabuleiro, pos_atual=None, rastro=None):
                 linha_formatada.append(celula)
         print("|" + "|".join(linha_formatada) + "|")
 
-# Função que encontra o melhor caminho entre o ponto inicial e o destino.
-# Usa busca em largura (BFS) para encontrar o caminho mais curto.
+# Função que encontra o melhor caminho entre o ponto inicial e o destino
+# Usa BFS para encontrar o caminho mais curto
 def encontrar_melhor_caminho(tabuleiro, inicio, destino, n):
     from collections import deque
 
-    tab_copia = [linha[:] for linha in tabuleiro]  # Cópia da matriz original
+    tab_copia = [linha[:] for linha in tabuleiro]  # copia da matriz original
     fila = deque([(inicio[0], inicio[1], [])])     # Fila para BFS, armazena (linha, coluna, caminho até aqui)
     visitados = set([(inicio[0], inicio[1])])      # Conjunto de posições já visitadas
-    direcoes = [(0, 1), (0, -1), (1, 0), (-1, 0)]   # Direções possíveis: direita, esquerda, baixo, cima
+    direcoes = [(0, 1), (0, -1), (1, 0), (-1, 0)]  # Direções possíveis: direita, esquerda, baixo, cima
 
-    rastro_da_busca = []  # Para armazenar o rastro completo da busca (para visualização)
+    rastro_da_busca = []  # Para armazenar o rastro completo da busca
 
     while fila:
         linha, coluna, caminho = fila.popleft()  # Pega próxima posição da fila
@@ -48,8 +49,8 @@ def encontrar_melhor_caminho(tabuleiro, inicio, destino, n):
 
     return None, rastro_da_busca  # Nenhum caminho foi encontrado
 
-# Mostra o passo a passo da busca de forma interativa no terminal.
-# Útil quando não se encontra o caminho, para entender o processo.
+# Mostra o passo a passo da busca de forma interativa no terminal
+# Útil quando não se encontra o caminho, para entender o processo
 def mostrar_passos_interativamente(tabuleiro, passos):
     for i, (linha, coluna, caminho) in enumerate(passos):
         print(f"\nPasso {i + 1}: Analisando posição ({linha}, {coluna})")
@@ -57,7 +58,7 @@ def mostrar_passos_interativamente(tabuleiro, passos):
         mostrar_tabuleiro(tabuleiro, (linha, coluna), rastro)
         input("Pressione Enter para continuar...")  # Aguarda usuário para continuar
 
-# Exibe o caminho final encontrado, passo a passo, destacando o avanço.
+# Exibe o caminho final encontrado
 def mostrar_caminho_final(tabuleiro, caminho):
     for i, pos in enumerate(caminho):
         print(f"\nPasso {i + 1}/{len(caminho)}: posição {pos}")
@@ -65,10 +66,9 @@ def mostrar_caminho_final(tabuleiro, caminho):
         mostrar_tabuleiro(tabuleiro, pos, rastro)
         input("Pressione Enter para continuar...")
 
-# Função principal que define o tabuleiro, os pontos de partida e destino,
-# executa a busca e mostra o resultado final.
+# Função principal que define o tabuleiro, os pontos de partida e destino
+# executa a busca e mostra o resultado final
 def main():
-    # Definição do tabuleiro 4x4: espaços vazios e obstáculos 'X'
     tabuleiro = [
         [' ', 'X', ' ', ' '],
         [' ', ' ', ' ', ' '],
@@ -93,7 +93,7 @@ def main():
         print("\n\033[1;34mCaminho final numerado:\033[0m")
         tab_final = [linha[:] for linha in tabuleiro]
         for passo, (l, c) in enumerate(caminho):
-            # Substitui a posição no tabuleiro pelo número do passo (ou letra se for > 9)
+            # Substitui a posição no tabuleiro pelo número do passo
             tab_final[l][c] = str(passo + 1) if passo < 9 else chr(ord('a') + passo - 9)
         mostrar_tabuleiro(tab_final)
     else:
