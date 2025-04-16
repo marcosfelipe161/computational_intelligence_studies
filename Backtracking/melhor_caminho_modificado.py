@@ -1,6 +1,6 @@
 # Nesse algoritmo, com relação ao algoritmo de melhor caminho, fiz a modificação
-# de adicionar obstaculos aleatorios numa matriz 3x10 e uma animação do caminho
-# sendo feito em tempo real usando a matplotlib
+# de adicionar obstaculos aleatorios numa matriz 3x10 e o algoritmo de BFS é feito
+# usando filas. Também  fiz uma animação do caminho sendo feito em tempo real usando a matplotlib
 
 import random
 import matplotlib.pyplot as plt
