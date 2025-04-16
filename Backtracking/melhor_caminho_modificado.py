@@ -29,7 +29,7 @@ def gerar_tabuleiro():
     destino = (0, 9)
     return tabuleiro, inicio, destino
 
-# Calcula a distância entre dois pontos (heurística simples)
+# Calcula a distância entre dois pontos
 def distancia(a, b):
     return abs(a[0] - b[0]) + abs(a[1] - b[1])
 
