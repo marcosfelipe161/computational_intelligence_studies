@@ -107,9 +107,8 @@ def posicao_do_mouse(x, y):
     coluna = x // (tamanho // 3)
     return linha * 3 + coluna
 
-# Loop principal
 jogando = True
-vez_do_jogador = True  # Jogador começa agora
+vez_do_jogador = True 
 
 while jogando:
     desenhar_tabuleiro()
