@@ -104,23 +104,3 @@ plt.xlabel("Geração")
 plt.ylabel("MSE")
 plt.grid(True)
 plt.show()
-
-# Gráfico não cai mais advém da dispersão talvez
-# ou  talvez pelo modelo linear não ser o adequado
-# O resultado é um plano tendo em vista a quantidade de variaveis
-
-#brincar com os valores de mutação, valores de população, uma grande ou pequena
-#mexer no tamanho
-
-# Esse não é um algoritmo determinístico
-# Está dentro de valores aproximados que ficam dentro de um erro aceitável, indicado pelo mse
-# se o erro não cair, talvez seja necessário um melhor modelo ou um com menor dispersão
-
-# Não é um algoritmo de convergencia rapida
-# Quase sempre converge, mesmo que lentamente
-
-# Em algoritmos que voce não conhece os criterios de convergencia, algortimo genetico
-# pode ajudar. Porém, não é muito utilizado devido à performance
-
-# Tem modelos de regressão linear, polinomial, exponencial, etc
-
